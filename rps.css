@@ -1,0 +1,64 @@
+body {
+    background-color: #0a92f2;
+    text-align: center;
+    justify-content: center;
+
+}
+
+h1 {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    font-size: xxx-large;
+}
+
+#choicesContainer {
+    display: flex;
+    text-align: center;
+    justify-content: space-evenly;
+    margin-top: 75px;
+   
+}
+
+#results {
+    border: 5px solid red;
+    margin-top: 30px;
+    background-color: lightgray; 
+}
+
+#results > p {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+button {
+    width: 150px;
+    height: 150px;
+    
+}
+
+#rockBtn {
+ 
+background-image: url('Rock.jpeg');
+background-size: cover;
+font-size:large;
+}
+#paperBtn {
+    background-image: url('paper.jpg');
+    background-size: cover;
+    font-size:large;
+}
+#scissorsBtn {
+    background-image: url('scissors.jpg');
+background-size: cover;
+font-size:large;
+
+}
+
+#score {
+    display: flex;
+    margin-top: 100px;
+    justify-content: center;
+    text-align: center;
+}
