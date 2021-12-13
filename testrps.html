@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+  
+
+  
+//I placed game options in an array to give the computer options for r.p.s.//
+function computerChoice() {
+  const gameOptions = ['rock', 'paper', 'scissors'];
+const randomChoice = gameOptions[Math.floor(Math.random() * gameOptions.length)];
+return randomChoice;
+}
+
+//I used playerDecision to get an input from the player then used .toLowercase() to make the answer case insensitive//
+function playerChoice() {
+  let playerDecision = prompt("What's your Weapon?", "").toLowerCase(); 
+  return playerDecision;
+}
+
+
+//I pass playerChoice(), computerChoice into the rpsRound() function  ex: rpsRound(playerChoice(), computerChoice() it prompts the user to enter their choice then randomly generates the computers choice.  It will then use the condition to alert or print an answer.  
+let computerScore = 0;
+let playerScore = 0;
+
+function rpsRound(playerSelection, computerSelection) {
+
+if (playerSelection === computerSelection) {
+  console.log(`player chose ${playerSelection} and computer chose ${computerSelection} draw`)
+}
+
+else if (playerSelection === "rock" && computerSelection === "paper") {
+    console.log(`player chose ${playerSelection} and computer chose ${computerSelection} "You lose.  Paper beats rock"`) 
+    return "Computer Score:" + ++computerScore;
+ }
+
+else if (playerSelection === "rock" && computerSelection === "scissors") {
+  console.log(`player chose ${playerSelection} and computer chose ${computerSelection} "You win.  rock beats scissors"`) 
+  return "Player Score:" + ++playerScore;
+}
+
+  else if (playerSelection === "paper" && computerSelection === "rock") {
+  console.log(`player chose ${playerSelection} and computer chose ${computerSelection} "You win.  Paper beats rock"`) 
+  return "Player Score:" + ++playerScore;
+}
+
+else if (playerSelection === "paper" && computerSelection === "scissors") {
+  console.log(`player chose ${playerSelection} and computer chose ${computerSelection} "You lose.  scissors beats paper"`) 
+  return "Computer Score:" + ++computerScore
+} 
+
+  else if (playerSelection === "scissors" && computerSelection === "paper") {
+  console.log(`player chose ${playerSelection} and computer chose ${computerSelection} "You win.  scissors beats paper"`) 
+  return "Player Score:" + ++playerScore;
+}
+
+else if (playerSelection === "scissors" && computerSelection === "rock") {
+  console.log(`player chose ${playerSelection} and computer chose ${computerSelection} "You lose.  rock beats scissors"`) 
+  return "Computer Score:" + ++computerScore;
+}
+
+  else { 
+  console.log("user should have entered 'Rock, Paper, or Scissors");
+  }
+}
+
+function game(){
+  console.log (rpsRound(playerChoice(), computerChoice()));
+  console.log (rpsRound(playerChoice(), computerChoice()));  
+  console.log (rpsRound(playerChoice(), computerChoice()));  
+  console.log (rpsRound(playerChoice(), computerChoice()));  
+  console.log (rpsRound(playerChoice(), computerChoice()));
+
+  if (playerScore > computerScore) {
+      return "player wins";}
+
+      else { 
+        return "computer wins"
+      }
+  }
+
+
+</script>    
+    <h1>Rock Paper Scissors</h1>
+</body>
+</html>
